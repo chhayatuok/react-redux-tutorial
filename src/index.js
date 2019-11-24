@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import store from './store'
+
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
 
 const stories = [
     {
@@ -24,7 +27,7 @@ const stories = [
 
 
 ReactDOM.render(
-    <App stories={stories} onArchive={() => {}} />,
+    <App stories={store.getState()} onArchive={() => {}} />,
     document.getElementById('root')
 );
 
